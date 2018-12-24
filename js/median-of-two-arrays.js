@@ -33,7 +33,7 @@ function FindMedianSortedArrays (nums1, nums2){
         const nums1Value = nums1[nums1Index]; 
         const nums2Value = nums2[nums2Index]; 
 
-        if (nums1Value && nums1Value) {
+        if (nums1Value && nums2Value) {
             nextNumber = nums1Value < nums2Value ? nums1Value : nums2Value;
         } else {
             nextNumber = nums1Value === undefined ? nums2Value : nums1Value;
@@ -49,3 +49,5 @@ console.log(FindMedianSortedArrays([1, 1], [2, 5, 6])) // 2
 console.log(FindMedianSortedArrays([1, 1, 1], [2, 5, 6])) // 1.5
 console.log(FindMedianSortedArrays([1, 1, 1, 1], [2, 5, 6])) // 1
 console.log(FindMedianSortedArrays([3, 5, 6, 8], [1, 1, 2])) // 3
+console.log(FindMedianSortedArrays([], [1, 1, 2])) // 1
+console.log(FindMedianSortedArrays([3, 4], [])) // 3.5
