@@ -51,3 +51,5 @@ console.log(FindMedianSortedArrays([1, 1, 1, 1], [2, 5, 6])) // 1
 console.log(FindMedianSortedArrays([3, 5, 6, 8], [1, 1, 2])) // 3
 console.log(FindMedianSortedArrays([], [1, 1, 2])) // 1
 console.log(FindMedianSortedArrays([3, 4], [])) // 3.5
+console.log(FindMedianSortedArrays([], [5, 6])) // 5.5
+console.log(FindMedianSortedArrays([], [5, 5])) // 5
