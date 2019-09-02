@@ -1,0 +1,29 @@
+// check if a tree is a binary tree
+
+// 1. in order traversal, keep pointer to prev traversed node, if prev traversed > current, then no
+    // - O(n) time, O(1) space
+// recursion with passing left min and right max, O(n) time, O(1) space if call stack not counted
+
+if given sorted list, find median. turn left into bst, turn right into bst - recurse
+
+
+tree delete:
+    case 1: leaf - delete
+    case 2: one child - delete, child takes over
+    case 3: 2 childs - delete, replace with left most node on right child
+
+tree add:
+    case 1: add as a leaf
+    case 2: add to a node with 1 child, 2 child
+
+
+tree node successor:
+    1. if there is a right child, the left most node on right child
+    2. if not right child, the first right parent
+    3. if no right child or right parent, then no successor (aka, node is last in tree)
+    
+binary tree - lowest common ancestor
+    1. if both lower, go left
+    2. if both larger, go right
+    3. else return node
+
