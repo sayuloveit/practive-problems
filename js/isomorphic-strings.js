@@ -27,17 +27,12 @@ function isIsomophic(s, t) {
             var char1 = s.charAt(index);
             var char2 = t.charAt(index);
 
-            if (charMap1[char1] === undefined) {
-                charMap1[char1] = char2;
-            }
-
-            if (charMap2[char2] === undefined) {
-                charMap2[char2] = char1;
-            }
-
-            if (charMap1[char1] !== char2 || charMap2[char2] !== char1) {
-                return false
-            }    
+           if (charMap1[char1] !== charMap2[char2]) {
+               return false;
+           } else {
+               charMap1[char1] = index + 1;
+               charMap2[char2] = index + 1;
+           }
         }
 
         return true;
@@ -46,13 +41,13 @@ function isIsomophic(s, t) {
     return false;
 }
 
-console.log(isIsomophic('egg', 'add')); // true;
+// console.log(isIsomophic('egg', 'add')); // true;
 console.log(isIsomophic('foo', 'bar')); // false;
-console.log(isIsomophic('paper', 'title')); // true;
-console.log(isIsomophic('ab', 'ca')); // true
+// console.log(isIsomophic('paper', 'title')); // true;
+// console.log(isIsomophic('ab', 'ca')); // true
 
 
-console.log(isIsomophic('pa er', 'title')); // false
-console.log(isIsomophic('paper', ' itle')); // false
-console.log(isIsomophic('ab', 'aa')); // false
-console.log(isIsomophic('aa', 'a ')); // false
+// console.log(isIsomophic('pa er', 'title')); // false
+// console.log(isIsomophic('paper', ' itle')); // false
+// console.log(isIsomophic('ab', 'aa')); // false
+// console.log(isIsomophic('aa', 'a ')); // false

@@ -10,5 +10,29 @@
 // Output: [0,0,1,1,2,2]
 
 var sortColors = function(nums) {
-    
+    var low = -1;
+    var mid = -1;
+    var high = nums.length;
+
+    while (mid + 1 < high) {
+        var toPlace = nums[mid + 1];
+
+        if (toPlace < 1) {
+            swap(nums, ++low, ++mid);
+        } else if (toPlace > 1) {
+            swap(nums, mid + 1, --high);
+        } else {
+            mid++;
+        }
+    }
+
+    return nums;
 };
+
+function swap(nums, from, to) {
+    var tmp = nums[from];
+    nums[from] = nums[to];
+    nums[to] = tmp;
+}
+
+console.log(sortColors([2,0,2,1,1,0,2,1,2,0,0,2,1]));

@@ -1,7 +1,7 @@
 // add 1 to array of number
 // ex: [ 1, 2, 3 ] -> [ 1, 2, 4 ], [ 9 ] -> [ 1, 0 ]
 
-function add_one(int_array: Array<number>) {
+function add_one(int_array) {
     const length = int_array.length;
 
     if (length === 0) {
@@ -14,7 +14,7 @@ function add_one(int_array: Array<number>) {
 
     const result = [ carry ? 0 : addOne ];
 
-    for (let i = length - 2; i >= 0; i--) {
+    for (let i = length - 1; i > 0; i--) {
         const digit = carry ? int_array[i] + carry : int_array[i];
         carry = digit > 9 ? 1 : 0;
         result.unshift(carry ? 0 : digit); 
