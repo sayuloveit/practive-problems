@@ -34,3 +34,5 @@ function printLongestSubStringWithKDistinctCharacters(str, k) {
 }
 
 console.log(printLongestSubStringWithKDistinctCharacters('aabcdefff', 3)); // 5
+console.log(printLongestSubStringWithKDistinctCharacters('aabbcc', 1)); // 2
+console.log(printLongestSubStringWithKDistinctCharacters('aabbcc', 2)); // 4

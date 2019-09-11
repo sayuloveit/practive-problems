@@ -31,12 +31,25 @@ function getLetters(num) {
 
 function printPhoneNumberMnemonics(numStr) {
     var output = [];
-    printPhoneNumberMnemonicsHelper();
+    printPhoneNumberMnemonicsHelper(numStr.split(''), new Array(numStr.length), 0, 0, output);
     return output;
 };
 
-function printPhoneNumberMnemonicsHelper() {
+function printPhoneNumberMnemonicsHelper(nums, buffer, index, bufferIndex, output) {
+    if (bufferIndex === nums.length || index === nums.length) {
+        output.push(buffer.join(''));
+    } else {
+        var letters = getLetters(nums[index]);
 
+        if (letters.length === 0) {
+            printPhoneNumberMnemonicsHelper(nums, buffer, index + 1, bufferIndex, output);
+        } else {
+            letters.forEach(letter => {
+                buffer[bufferIndex] = letter;
+                printPhoneNumberMnemonicsHelper(nums, buffer, index + 1, bufferIndex + 1, output);
+            });
+        }
+    }
 }
 
 console.log(printPhoneNumberMnemonics('213'));

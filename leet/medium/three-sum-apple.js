@@ -19,19 +19,22 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-    
+    let output = [];
+
+    for (let i = 0; i < nums.length - 2; i++) {
+        let l = i + 1;
+        let r = nums.length - 1;
+
+        while (l < r) {
+            if (nums[i] + nums[l] + nums[r] === 0) {
+                output.push([ nums[i], nums[l], nums[r] ]);
+            }
+            l++;
+            r--;
+        }
+    }
+
+    return output;
 };
 
-function threeSumHelper(nums, buffer, index, isInBuffer, res) {
-    if (buffer.length === 3) {
-        var sum = buffer.reduce((acc, num) => {
-            return acc + num;
-        }, 0);
-
-        if (sum === 0) {
-            res.push([...buffer]);
-        }
-
-        for (var i = index; )
-    }
-}
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));

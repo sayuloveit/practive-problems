@@ -4,13 +4,32 @@
 // Input: [0,1,0,3,12]
 // Output: [1,3,12,0,0]
 
-function moveZeros(nums) {
-    var lastZeroIndex = 0;
+function moveZerosToStart(nums) {
+    let boundry = 0;
 
+    console.log(nums);
+    nums.forEach((num, index) => {
+        if (num === 0) {
+            swap(nums, boundry, index);
+            console.log(nums);
+            boundry++;
+        }
+    });
+
+    return nums;
+}
+
+console.log('move to start', moveZerosToStart([0,1,0,3,12]));
+
+function moveZerosToEnd(nums) {
+    let boundry = 0;
+
+    console.log(nums)
     nums.forEach((num, index) => {
         if (num > 0) {
-            swap(nums, lastZeroIndex, index);
-            lastZeroIndex++;
+            swap(nums, boundry, index);
+            console.log(nums);
+            boundry++;
         }
     });
 
@@ -23,4 +42,4 @@ function swap(nums, from, to) {
     nums[to] = tmp;
 }
 
-console.log(moveZeros([0,1,0,3,12]));
+console.log('move to start', moveZerosToEnd([0,1,0,3,12]));
